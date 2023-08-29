@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wn.wooper.mapper.RcsResultTableMapper">
+
+    <update id="rcsCreateMessageResult" parameterType="string">
+        CREATE TABLE IF NOT EXISTS `RCS_RESULT_${value}` (
+          MSEQ int NOT NULL AUTO_INCREMENT,
+		  CLIENT_MSG_ID varchar(50) DEFAULT NULL,
+		  MSG_ID int DEFAULT NULL,
+		  RECEIVER varchar(12) DEFAULT NULL,
+		  PRICE_RCS float DEFAULT NULL,
+		  PRICE_REP float DEFAULT NULL,
+		  RESULT int DEFAULT NULL,
+		  MESSAGE varchar(1000) DEFAULT NULL,
+		  CHANNEL_ID int DEFAULT NULL,
+		  SEND_TYPE varchar(10) NOT NULL DEFAULT 'inside',
+		  TELECOM varchar(10) DEFAULT NULL,
+		  DATE datetime DEFAULT NULL,
+		  CONVERTED int DEFAULT NULL,
+		  CONVERT_RESULT int DEFAULT NULL,
+		  CONVERT_DATE datetime DEFAULT '0000-00-00 00:00:00',
+		  PRIMARY KEY (MSEQ)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='메시지 발송 결과';
+
+    </update>
+</mapper>
